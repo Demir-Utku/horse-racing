@@ -26,6 +26,7 @@ function getHorseName(horseId: number) {
     <div
       class="h-[calc(100svh-10.625rem)] flex flex-col"
       :class="{ 'overflow-auto': !!raceStore.rounds.length }"
+      data-testid="program-container"
     >
       <Transition name="fade" mode="out-in">
         <div v-if="!raceStore.rounds.length" class="flex flex-col gap-2 my-auto px-1">

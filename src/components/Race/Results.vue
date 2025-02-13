@@ -34,6 +34,7 @@ function getHorseName(horseId: number) {
     <div
       class="h-[calc(100svh-10.625rem)] flex flex-col"
       :class="{ 'overflow-auto': !!raceStore.raceResults.length }"
+      data-testid="results-container"
     >
       <Transition name="fade" mode="out-in">
         <div v-if="!raceStore.raceResults.length" class="flex flex-col gap-2 my-auto px-1">
@@ -47,7 +48,7 @@ function getHorseName(horseId: number) {
             class="mb-4 whitespace-nowrap w-72"
           >
             <Transition name="fade-down" mode="out-in">
-              <div v-if="result.positions.length">
+              <div v-if="result.positions.length" data-testid="round-result">
                 <!-- round info: number and distance -->
                 <div class="bg-orange-700 px-4 py-2 w-full">
                   <p class="text-white text-sm font-bold">
@@ -62,7 +63,11 @@ function getHorseName(horseId: number) {
                   </template>
 
                   <template #body>
-                    <tr v-for="{ horseId, posIdx } in result.positions" :key="horseId">
+                    <tr
+                      v-for="{ horseId, posIdx } in result.positions"
+                      :key="horseId"
+                      data-testid="result-row"
+                    >
                       <td>{{ posIdx }}</td>
                       <td>{{ getHorseName(horseId) }}</td>
                     </tr>
