@@ -22,10 +22,6 @@ function formatLapTitle(round?: RoundData) {
 function getRound(roundId: string) {
   return raceStore.rounds.find(r => r.id === roundId)
 }
-
-function getHorseName(horseId: number) {
-  return horseStore.horses.find(h => h.id === horseId)?.name ?? 'Unknown'
-}
 </script>
 
 <template>
@@ -72,7 +68,7 @@ function getHorseName(horseId: number) {
                       data-testid="result-row"
                     >
                       <td>{{ posIdx }}</td>
-                      <td>{{ getHorseName(horseId) }}</td>
+                      <td>{{ horseStore.getHorseName(horseId) }}</td>
                     </tr>
                   </template>
                 </UiTable>

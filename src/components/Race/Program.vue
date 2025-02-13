@@ -11,10 +11,6 @@ const horseStore = useHorseStore()
 function formatLapTitle(round: RoundData) {
   return `${round.roundNumber}. Lap - ${round.distance}m`
 }
-
-function getHorseName(horseId: number) {
-  return horseStore.horses.find(h => h.id === horseId)?.name ?? 'Unknown'
-}
 </script>
 
 <template>
@@ -57,7 +53,7 @@ function getHorseName(horseId: number) {
               <template #body>
                 <tr v-for="(horseId, index) in round.horseIds" :key="horseId">
                   <td>{{ index + 1 }}</td>
-                  <td>{{ getHorseName(horseId) }}</td>
+                  <td>{{ horseStore.getHorseName(horseId) }}</td>
                 </tr>
               </template>
             </UiTable>

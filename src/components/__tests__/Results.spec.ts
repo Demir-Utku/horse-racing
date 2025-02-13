@@ -23,7 +23,7 @@ describe('Results.vue', () => {
 
   it('shows waiting message when no race results', () => {
     const wrapper = mount(Results)
-    expect(wrapper.text()).toContain('Waiting a round to finish...')
+    expect(wrapper.text()).toContain('Waiting a horse to finish the round...')
   })
 
   it('displays race results correctly when available', async () => {

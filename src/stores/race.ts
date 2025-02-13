@@ -78,7 +78,8 @@ export const useRaceStore = defineStore('race', {
         this.raceStatus = 'paused'
       }
     },
-    getHorseSpeed(horseId: number) {
+    getTimeToFinish(horseId: number, distance: number) {
+      // calculate horse speed
       const horseStore = useHorseStore()
 
       const horse = horseStore.horses.find(h => h.id === horseId)
@@ -87,18 +88,13 @@ export const useRaceStore = defineStore('race', {
       const baseSpeed = 15 // baseline speed (m/s)
       const conditionFactor = 0.8 // per condition point
 
-      return baseSpeed + horse.condition * conditionFactor
-    },
-    getTimeToFinish(horseId: number, distance: number) {
-      const speed = this.getHorseSpeed(horseId)
+      const speed = baseSpeed + horse.condition * conditionFactor
 
       if (speed <= 0) return Number.MAX_SAFE_INTEGER // fallback if speed is 0
 
       return distance / speed
     },
-    /**
-     * Save the current position of a horse when paused
-     */
+    // Save the current position of a horse when paused     */
     saveHorsePosition(horseId: number, left: string, elapsedTime: number) {
       this.pausedPositions[horseId] = { left, elapsedTime }
     },

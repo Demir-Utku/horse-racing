@@ -19,6 +19,12 @@ export const useHorseStore = defineStore('horse', {
           condition: Math.floor(Math.random() * 100) + 1
         })
       }
+    },
+    getHorseName(horseId: number) {
+      const horse = this.horses.find(h => h.id === horseId)
+      if (!horse) return 'Unknown'
+
+      return horse.name
     }
   }
 })
