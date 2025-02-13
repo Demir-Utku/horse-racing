@@ -27,9 +27,9 @@ importers:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.7.3)
     devDependencies:
-      '@iconify-json/noto':
-        specifier: ^1.2.2
-        version: 1.2.2
+      '@iconify-json/fluent-emoji-high-contrast':
+        specifier: ^1.2.3
+        version: 1.2.3
       '@playwright/test':
         specifier: ^1.50.1
         version: 1.50.1
@@ -87,9 +87,6 @@ importers:
       prettier:
         specifier: ^3.4.2
         version: 3.5.0
-      sass:
-        specifier: ^1.84.0
-        version: 1.84.0
       typescript:
         specifier: ~5.7.3
         version: 5.7.3
@@ -502,8 +499,8 @@ packages:
     resolution: {integrity: sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==}
     engines: {node: '>=18.18'}
 
-  '@iconify-json/noto@1.2.2':
-    resolution: {integrity: sha512-nVyjbd3CJ1AhSXdvzlPyku1hZ4cQPzXEgZh65rDUdZi2sEgvHJHdiDcr//6ynoCbFnWb8o1ck6x/s/HND4mWFA==}
+  '@iconify-json/fluent-emoji-high-contrast@1.2.3':
+    resolution: {integrity: sha512-quHd+KLY3I1gZHiQj2qH2djt8RQaj+DrBpNdJ/b7Cweiu6m3/h/ZR/KMXSGNGmPKMgPlGgH2MlIpO8CgZdsBAg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3097,7 +3094,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.1': {}
 
-  '@iconify-json/noto@1.2.2':
+  '@iconify-json/fluent-emoji-high-contrast@1.2.3':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -3920,6 +3917,7 @@ snapshots:
   chokidar@4.0.3:
     dependencies:
       readdirp: 4.1.1
+    optional: true
 
   color-convert@2.0.1:
     dependencies:
@@ -4346,7 +4344,8 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  immutable@5.0.3: {}
+  immutable@5.0.3:
+    optional: true
 
   import-fresh@3.3.1:
     dependencies:
@@ -4794,7 +4793,8 @@ snapshots:
     dependencies:
       picomatch: 2.3.1
 
-  readdirp@4.1.1: {}
+  readdirp@4.1.1:
+    optional: true
 
   resolve-from@4.0.0: {}
 
@@ -4844,6 +4844,7 @@ snapshots:
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.1
+    optional: true
 
   saxes@6.0.0:
     dependencies:
