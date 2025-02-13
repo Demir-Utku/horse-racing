@@ -41,7 +41,9 @@ watch(
 </script>
 
 <template>
-  <div class="w-full my-auto flex flex-col gap-3 min-h-[25rem]">
+  <div
+    class="w-full my-auto flex flex-col gap-2 min-h-[25rem] border rounded-md bg-white p-2 md:p-4 pr-1.5 md:pr-2.5"
+  >
     <div
       class="min-h-0 relative flex-1 flex flex-col gap-0 mr-5 after:content-[''] after:block after:absolute after:top-0 after:right-0 after:w-0.5 after:h-full after:bg-red-600"
       data-testid="race-track-area"

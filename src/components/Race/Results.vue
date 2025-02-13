@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useRaceStore } from '@/stores/race'
 import { useHorseStore } from '@/stores/horse'
 import type { RoundData } from '@/types'
@@ -7,6 +8,8 @@ import UiTable from '../UiTable.vue'
 
 const raceStore = useRaceStore()
 const horseStore = useHorseStore()
+
+const hasResults = computed(() => raceStore.raceResults.length > 0)
 
 function formatLapTitle(round?: RoundData) {
   if (!round) {
@@ -33,11 +36,11 @@ function getHorseName(horseId: number) {
 
     <div
       class="h-[calc(100svh-10.625rem)] flex flex-col"
-      :class="{ 'overflow-auto': !!raceStore.raceResults.length }"
+      :class="{ 'overflow-auto': hasResults }"
       data-testid="results-container"
     >
       <Transition name="fade" mode="out-in">
-        <div v-if="!raceStore.raceResults.length" class="flex flex-col gap-2 my-auto px-1">
+        <div v-if="!hasResults" class="flex flex-col gap-2 my-auto px-1">
           <p class="text-sm font-medium text-center">Waiting a horse to finish the round...</p>
         </div>
 
@@ -45,7 +48,7 @@ function getHorseName(horseId: number) {
           <div
             v-for="result in raceStore.raceResults"
             :key="result.roundId"
-            class="mb-4 whitespace-nowrap w-72"
+            class="mb-4 whitespace-nowrap xl:w-72"
           >
             <Transition name="fade-down" mode="out-in">
               <div v-if="result.positions.length" data-testid="round-result">

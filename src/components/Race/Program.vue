@@ -29,11 +29,11 @@ function getHorseName(horseId: number) {
       data-testid="program-container"
     >
       <Transition name="fade" mode="out-in">
-        <div v-if="!raceStore.rounds.length" class="flex flex-col gap-2 my-auto px-1">
-          <p class="text-sm font-medium text-center">No rounds generated yet!</p>
+        <div v-if="!raceStore.rounds.length" class="flex flex-col gap-4 my-auto px-1">
+          <p class="text-sm font-medium text-center">A program has not been generated yet!</p>
 
           <p class="text-sm text-center">
-            Click the <strong>Generate Program</strong> button above to generate the program.
+            Click the <strong>Generate Program</strong> button above to generate a program.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ function getHorseName(horseId: number) {
           <div
             v-for="round in raceStore.rounds"
             :key="round.id"
-            class="mb-4 w-72 whitespace-nowrap"
+            class="mb-4 xl:w-72 whitespace-nowrap"
           >
             <!-- round info: number and distance -->
             <div class="bg-orange-700 px-4 py-2 w-full">

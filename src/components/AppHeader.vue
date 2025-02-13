@@ -44,17 +44,25 @@ function handleChangeState() {
 
 <template>
   <div
-    class="px-5 py-2.5 w-full flex items-center justify-between gap-4 bg-emerald-500"
+    class="px-3 py-1.5 sm:px-4 sm:py-2 lg:px-5 lg:py-2.5 w-full flex items-center justify-between gap-4 bg-emerald-500"
     data-testid="app-header"
   >
-    <h3 class="text-3xl font-semibold text-black">Horse Racing</h3>
+    <h3 class="text-2xl sm:text-3xl font-semibold text-black">Horse Racing</h3>
 
-    <div class="flex items-center gap-5">
-      <UiButton data-testid="generate-program-btn" @click="raceStore.generateRounds()">
+    <div class="flex items-center gap-2 sm:gap-3 md:gap-5">
+      <UiButton
+        data-testid="generate-program-btn"
+        class="text-sm sm:text-base"
+        @click="raceStore.generateRounds()"
+      >
         Generate Program
       </UiButton>
 
-      <UiButton data-testid="race-control-btn" @click="handleChangeState">
+      <UiButton
+        data-testid="race-control-btn"
+        class="text-sm sm:text-base"
+        @click="handleChangeState"
+      >
         {{ stateLabel }}
       </UiButton>
     </div>
