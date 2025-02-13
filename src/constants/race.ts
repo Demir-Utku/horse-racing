@@ -1,0 +1,3 @@
+export const NUMBER_OF_ROUNDS = 6
+
+export const ROUND_DISTANCES = [1200, 1400, 1600, 1800, 2000, 2200]
