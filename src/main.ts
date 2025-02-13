@@ -21,7 +21,7 @@ Sentry.init({
   ],
   tracesSampleRate: 1.0,
   // Set 'tracePropagationTargets' to control for which URLs distributed tracing should be enabled
-  tracePropagationTargets: ['localhost', 'https://horse-racing.vercel.app/']
+  tracePropagationTargets: ['localhost', 'https://horse-racing-tau.vercel.app/']
 })
 
 app.config.errorHandler = (err, _, info) => {

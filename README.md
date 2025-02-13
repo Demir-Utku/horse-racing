@@ -2,6 +2,8 @@
 
 A Vue.js-based horse racing application that provides an interactive racing experience. This project was built as a case study to demonstrate modern web development practices and state management in Vue.js applications.
 
+## **Live Demo**: [https://horse-racing-tau.vercel.app/](https://horse-racing-tau.vercel.app/)
+
 ## Features
 
 - Dynamic horse generation
