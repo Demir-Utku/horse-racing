@@ -31,5 +31,7 @@ coverage
 test-results/
 playwright-report/
 
-# Sentry Config File
-.env.sentry-build-plugin
+# env
+.env
+.env.*
+!.env.example
